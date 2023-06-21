@@ -1,0 +1,35 @@
+package com.example.apptheodoixe.adapter;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+
+import com.example.apptheodoixe.fragment.FragmentCaNhan;
+import com.example.apptheodoixe.fragment.FragmentLichSu;
+import com.example.apptheodoixe.fragment.FragmentTrangChu;
+
+public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+
+
+    public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
+        super(fm, behavior);
+    }
+
+
+
+    @NonNull
+    @Override
+    public Fragment getItem(int position) {
+        switch (position){
+            case 0: return new FragmentTrangChu();
+            case 1: return new FragmentCaNhan();
+        }
+        return null;
+    }
+
+    @Override
+    public int getCount() {
+        return 2;
+    }
+}
